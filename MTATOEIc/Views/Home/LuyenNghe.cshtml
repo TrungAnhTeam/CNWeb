@@ -1,0 +1,189 @@
+﻿
+@{
+    ViewBag.Title = "trangchu";
+    Layout = "~/Views/shared/_LayoutTrangchu.cshtml";
+}
+
+<section class="Vocabulary">
+
+    <div class="container">
+        <div class="row mt-5" data-spy="scroll" data-target="#bttext" data-offset="0">
+            <div class="MayChuyenDong1" id="tuvung">
+                <h2>
+                    Từ vựng <a a href="@Url.Action("TuVung")" class="badge badge-success ">Tất Cả</a>
+                </h2>
+                <div class="list-product-subtitle">
+                    <p>Danh sách các dạng bài</p>
+                </div>
+            </div>
+
+
+
+            <div class="product-group" id="MayChuyenDong2">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="card card-product mb-3">
+                            <img class="card-img-top" src="/images/VC_family.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Family</h5>
+                                <p class="card-text">Father, mother, sister, brother,uncle,...</p>
+                                <a a href="@Url.Action("TuVung")" class="btn btn-primary">Bắt đầu</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="card card-product mb-3">
+                            <img class="card-img-top" src="/images/VC_sport.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title"> Sport</h5>
+                                <p class="card-text">Soccer, swimming, running, volleyball,...</p>
+                                <a a href="@Url.Action("TuVung")" class="btn btn-primary">Bắt đầu</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="card card-product mb-3">
+                            <img class="card-img-top" src="/images/VC_entertainment.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Entertainment </h5>
+                                <p class="card-text">Music, guitar, film, flute, flow, remix...</p>
+                                <a a href="@Url.Action("TuVung")" class="btn btn-primary">Bắt đầu</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="card card-product mb-3">
+                            <img class="card-img-top" src="/images/VC_job.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Job</h5>
+                                <p class="card-text">Docter, Nurse, Police, Pilot, Chef, ...</p>
+                                <a a href="@Url.Action("TuVung")" class="btn btn-primary">Bắt đầu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-------------------------------x----------- end list vocabulary ---------------x------------------>
+<!-------------------------------------- list gramar ------------------------------------------------>
+<section class="gramar">
+    <div class="container">
+        <div class="row mt-5" id="nguphap">
+            <h2>
+                Ngữ pháp <a class="badge badge-success " href="@Url.Action("Nguphapcoban")">Tất cả</a>
+            </h2>
+            <div class="list-product-subtitle">
+                <p>Danh sách các dạng bài</p>
+            </div>
+            <div class="product-group" id="MayChuyenDong3">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="card card-product mb-3">
+                            <img class="card-img-top" src="/images/G_tenses.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">12 TENSES</h5>
+                                <p class="card-text">Hiện tại đơn, hiện tại tiếp diễn, quá khứ đơn,...</p>
+                                <a a href="@Url.Action("Nguphapcoban")" class="btn btn-primary">Bắt đầu</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="card card-product mb-3">
+                            <img class="card-img-top" src="/images/G_modal_verb.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Modal verb</h5>
+                                <p class="card-text">may, can, will, must, shall, could, should,...</p>
+                                <a href="Nguphap" class="btn btn-primary">Bắt đầu</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="card card-product mb-3">
+                            <img class="card-img-top" src="/images/G_pronouns_and_nouns.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Pronouns and nouns</h5>
+                                <p class="card-text">He, she, my, you,... and car, house,...</p>
+                                <a href="@Url.Action("Nguphapcoban")" class="btn btn-primary">Bắt đầu</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="card card-product mb-3">
+                            <img class="card-img-top" src="/images/G_adjective_and_adverbs.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Adjective and adverbs</h5>
+                                <p class="card-text">considerable, competitive, carefully,promptly ...</p>
+                                <a href="@Url.Action("Nguphapcoban")" class="btn btn-primary">Bắt đầu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-------------x-------------- end list gramar ----------------------x------------------->
+<!---------------------------------- list listen ----------------------------------------->
+<section class="listen" id=luyennghe>
+    <div class="container">
+        <div class="row mt-5">
+            <h2>
+                Luyện Nghe <a class="badge badge-success " href="TLuyenNghe">Tất cả</a>
+            </h2>
+            <div class="list-product-subtitle">
+                <p>Danh sách các dạng bài</p>
+            </div>
+            <div class="product-group">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="card card-product mb-3">
+                            <img class="card-img-top" src="/images/L_listening_1.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Đề Listening 1</h5>
+                                <p class="card-text">Bạn hãy nghe đoạn hội thoại giữa Maria và Dave về đời ...</p>
+                                <a href="@Url.Action("LuyenNghe")" class="btn btn-primary">Bắt đầu</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="card card-product mb-3">
+                            <img class="card-img-top" src="/images/L_try_to_sleep.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Try to sleep</h5>
+                                <p class="card-text">Norma went to bed. It was eleven o’clock. She turned...</p>
+                                <a href="#" class="btn btn-primary">Bắt đầu</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="card card-product mb-3">
+                            <img class="card-img-top" src="/images/L_people_description.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">People description</h5>
+                                <p class="card-text">Các từ/ cụm từ miêu tả ngoại hình, tính cách, con người.</p>
+                                <a href="LuyenNghe" class="btn btn-primary">Bắt đầu</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="card card-product mb-3">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/MEVt7GVlGXY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Video hỗ trợ</h5>
+                                <p class="card-text">considerable, competitive, carefully,promptly ...</p>
+                                <a href="LuyenNghe" class="btn btn-primary">Bắt đầu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

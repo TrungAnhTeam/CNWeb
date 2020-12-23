@@ -1,0 +1,126 @@
+﻿@model MTATOEIc.Models.EF.ProfileTA
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/Content/Tuvung.css" rel="stylesheet" />
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/aos.css" rel="stylesheet" />
+    <link href="/Content/all.css" rel="stylesheet" />
+    <link href="~/Content/HieuChinhChung.css" rel="stylesheet" />
+
+</head>
+<body>
+    <!-- menu -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand " href="@Url.Action("trangchu","Home")">
+                <img id="LogoEnglish" src="/images/LogoEnglish.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " href="@Url.Action("TuVung","Home")">
+                            Từ vựng
+                        </a>
+                        <div class="dropdown-content">
+                            <a class="dropdown-item" href="@Url.Action("TuVung","Home")">Từ vựng theo chủ đề</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="@Url.Action("BTTuVung","BTTuVung")">Bài tập</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="@Url.Action("NguPhap","Home")" id="navbarDropdown">
+                            Ngữ pháp
+                        </a>
+                        <div class="dropdown-content">
+                            <a class="dropdown-item" href="@Url.Action("NguPhap","Home")">Ngữ pháp cơ bản</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="@Url.Action("BTNguPhap","BTNguPhap")">Bài tập</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="@Url.Action("LuyenNghe","Home")" id="navbarDropdown">
+                            Luyện nghe
+                        </a>
+                        <div class="dropdown-content">
+                            <a class="dropdown-item" href="@Url.Action("LuyenNghe","Home")">Luyện phát âm</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="@Url.Action("BTLuyenNghe","BTLuyenNghe")">Luyện nghe</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdown">
+                            Liên hệ
+                        </a>
+                </ul>
+                <div class="form-inline my-2 my-lg-0">
+
+                    <p>Trần Sang Anh<br/>EXP:1500  Level: 3</p>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- end menu -->
+
+
+    <main>
+        @RenderBody();
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="about-us" data-aos="fade-right" data-aos-delay="200">
+                <h2>Thông tin</h2>
+                <p>Trang web được xây dựng để học Tiếng Anh </p>
+                <p>Học viện kỹ thuật quân sự</p>
+            </div>
+
+            <div class="about-us" data-aos="fade-right" data-aos-delay="200">
+                <h2>Thành viên nhóm</h2>
+                <p>Trịnh Thành Trung </p>
+                <p>Trần Sang Anh</p>
+                <p>Lê Học Đại</p>
+                <p>Roat Bunthoeun</p>
+            </div>
+
+            <div class="follow" data-aos="fade-left" data-aos-delay="200">
+                <h2>Liên hệ chúng tôi</h2>
+                <p>Tòa nhà S11, Học viện kỹ thuật quân sự</p>
+
+            </div>
+
+        </div>
+        <div class="rights flex-row">
+            <h6 class="text-gray text-center">
+                Sáng lập ©2020 công nghệ phần mềm | made by FcQuaTuyetVoi
+            </h6>
+        </div>
+
+
+    </footer>
+    <div class='lentop'>
+        <div>
+            <img src='https://1.bp.blogspot.com/-k6sikOdzFXQ/VwqCKDosmEI/AAAAAAAAKxE/nLxLhkTIO6o3iE5ZWmtxo2bf4QHdzPQNQ/s1600/top.png' />
+        </div>
+    </div>
+
+    <!-- -------------x------------- Footer --------------------x------------------- -->
+    <!-- Load jquery trước khi load bootstrap js -->
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- ------------ AOS js Library  ------------------------- -->
+    <script src="~/Scripts/aos.js"></script>
+    <script src="~/Scripts/owl.carousel.min.js"></script>
+    <script src="~/Scripts/main.js"></script>
+</body>
+
+</html>

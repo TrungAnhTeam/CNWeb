@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "BTTuVung";
+    Layout = "~/Views/shared/_Layoutgeneral.cshtml";
+    var sa = ViewBag.qs;
+    var model = ViewBag.Unit;
+}
+<div class="container justify-content-center">
+    <div class="row">
+        <div class="col-4">
+            <ol>
+                @foreach (MTATOEIc.Models.EF.Unit item in model)
+                {
+
+                    if (@item.TypeTA_ID_FK == 1)
+                    {
+
+                        <li>
+                            @{
+
+                                var title = @item.Unit_Name + " . " + @item.Unit_Content;
+
+                            }
+                            <a href="@Url.Action(item.link)" class="btn btn-outline-info">@title</a>
+
+                        </li>
+                    }
+                }
+            </ol>
+        </div>
+        <div class="col-8">
+            <ol>
+                @{ var cout = 0;
+                }
+                @foreach (var item in sa)
+                {
+                    cout = cout + 1;
+                    var da1 = "A" + cout.ToString();
+                    var da2 = "B" + cout.ToString();
+                    var da3 = "C" + cout.ToString();
+                    var da4 = "D" + cout.ToString();
+                    var ip = "anser" + cout.ToString();
+                    var con = "conten" + cout.ToString();
+
+                    if (@item.Unit_ID_FK == 1)
+                    {
+                        <li>
+
+                            <p>@item.Ques_Content<p>
+                                <button type="button" class="btn btn-outline-primary withbut" id=@da1>A.@item.Answer_1</button><br />
+                                <button type="button" class="btn btn-outline-primary withbut" id=@da2>B.@item.Answer_2</button><br />
+                                <button type="button" class="btn btn-outline-primary withbut" id=@da3>C.@item.Answer_3</button><br />
+                                <button type="button" class="btn btn-outline-primary withbut" id=@da4>D.@item.Answer_4</button>
+                                <div class="nodisplay" id=@con>
+                                    @item.Sugget_conten
+
+                                </div>
+                            <p class="nodisplay" id=@ip>@item.Answer</p>
+
+
+
+                        </li>
+
+                    }
+                }
+            </ol>
+        </div>
+    </div>
+
+</div>
+<script src="~/Scripts/chondapan.js"></script>
+<link href="~/Content/HieuChinhChung.css" rel="stylesheet" />

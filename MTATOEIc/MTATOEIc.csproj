@@ -1,0 +1,425 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.9\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.9\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AB2D7418-87BA-48FA-92EA-12C8CA862401}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MTATOEIc</RootNamespace>
+    <AssemblyName>MTATOEIc</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44352</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
+    <DockerLaunchUrl>http://{ServiceIPAddress}</DockerLaunchUrl>
+    <TypeScriptToolsVersion>3.9</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bootstrap\css\bootstrap-grid.css" />
+    <Content Include="bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="bootstrap\css\bootstrap.css" />
+    <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="bootstrap\js\bootstrap.js" />
+    <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\all.css" />
+    <Content Include="Content\aos.css" />
+    <Content Include="Content\HieuChinhChung.css" />
+    <Content Include="Content\LoginAdmin.css" />
+    <Content Include="Content\owl.carousel.min.css" />
+    <Content Include="Content\owl.theme.default.min.css" />
+    <Content Include="Content\quantrivien.css" />
+    <Content Include="Content\Style.css" />
+    <Content Include="Content\Trangchu.css" />
+    <Content Include="Content\Tuvung.css" />
+    <Content Include="Global.asax" />
+    <Content Include="images\Admin\bg.jpg" />
+    <Content Include="images\Admin\information.png" />
+    <Content Include="images\Admin\Logonhom.png" />
+    <Content Include="images\cloud.png" />
+    <Content Include="images\cloud_douple.png" />
+    <Content Include="images\Gramar\12_tense.png" />
+    <Content Include="images\Gramar\modal_verb.png" />
+    <Content Include="images\G_adjective_and_adverbs.jpg" />
+    <Content Include="images\G_modal_verb.png" />
+    <Content Include="images\G_pronouns_and_nouns.jpg" />
+    <Content Include="images\G_tenses.png" />
+    <Content Include="images\loa.png" />
+    <Content Include="images\LogoEngLish.png" />
+    <Content Include="images\L_listening_1.jpg" />
+    <Content Include="images\L_people_description.jpg" />
+    <Content Include="images\L_try_to_sleep.png" />
+    <Content Include="images\runman.gif" />
+    <Content Include="images\TrangChu1.png" />
+    <Content Include="images\TrangChu2.png" />
+    <Content Include="images\TrangChu3.png" />
+    <Content Include="images\TuVung\Acquaintance.jpg" />
+    <Content Include="images\TuVung\actor.jpg" />
+    <Content Include="images\TuVung\Adjective.jpg" />
+    <Content Include="images\TuVung\Advanced.jpg" />
+    <Content Include="images\TuVung\Adverb.png" />
+    <Content Include="images\TuVung\Applaud.jpg" />
+    <Content Include="images\TuVung\Architect.jpg" />
+    <Content Include="images\TuVung\Argue.jpg" />
+    <Content Include="images\TuVung\Art.jpg" />
+    <Content Include="images\TuVung\Artist.jpg" />
+    <Content Include="images\TuVung\Artwork.jpg" />
+    <Content Include="images\TuVung\athelete.jpg" />
+    <Content Include="images\TuVung\Athlete.jpg" />
+    <Content Include="images\TuVung\Attractive.jpg" />
+    <Content Include="images\TuVung\Audience.jpg" />
+    <Content Include="images\TuVung\Aunt.jpg" />
+    <Content Include="images\TuVung\Author.jpg" />
+    <Content Include="images\TuVung\Badminton.jpg" />
+    <Content Include="images\TuVung\Bake.jpg" />
+    <Content Include="images\TuVung\Baker.jpg" />
+    <Content Include="images\TuVung\Band.jpg" />
+    <Content Include="images\TuVung\Baseball.jpg" />
+    <Content Include="images\TuVung\Basketball.jpg" />
+    <Content Include="images\TuVung\bear.jpg" />
+    <Content Include="images\TuVung\Beat.jpg" />
+    <Content Include="images\TuVung\Beautiful.jpg" />
+    <Content Include="images\TuVung\Beef.jpg" />
+    <Content Include="images\TuVung\Beer.jpg" />
+    <Content Include="images\TuVung\Beginner.jpg" />
+    <Content Include="images\TuVung\Bird.jpg" />
+    <Content Include="images\TuVung\Birth.jpg" />
+    <Content Include="images\TuVung\Bitter.jpg" />
+    <Content Include="images\TuVung\Black.jpg" />
+    <Content Include="images\TuVung\Blue.jpg" />
+    <Content Include="images\TuVung\Bodyshape.jpg" />
+    <Content Include="images\TuVung\Boil.jpg" />
+    <Content Include="images\TuVung\Boss.jpg" />
+    <Content Include="images\TuVung\Boyfriend.jpg" />
+    <Content Include="images\TuVung\Bread.jpg" />
+    <Content Include="images\TuVung\Breakup.jpg" />
+    <Content Include="images\TuVung\Brother.jpg" />
+    <Content Include="images\TuVung\Brown.png" />
+    <Content Include="images\TuVung\Brush.jpg" />
+    <Content Include="images\TuVung\Businessman.jpg" />
+    <Content Include="images\TuVung\Camera.jpg" />
+    <Content Include="images\TuVung\Canvas.jpg" />
+    <Content Include="images\TuVung\Cat.jpg" />
+    <Content Include="images\TuVung\Champion.jpg" />
+    <Content Include="images\TuVung\Charming.jpg" />
+    <Content Include="images\TuVung\Chef.jpg" />
+    <Content Include="images\TuVung\Chicken.jpg" />
+    <Content Include="images\TuVung\Cleaner.jpg" />
+    <Content Include="images\TuVung\Close.jpg" />
+    <Content Include="images\TuVung\Coach.jpg" />
+    <Content Include="images\TuVung\Coffee.jpg" />
+    <Content Include="images\TuVung\Colleague.jpg" />
+    <Content Include="images\TuVung\Color.jpg" />
+    <Content Include="images\TuVung\Colorful.jpg" />
+    <Content Include="images\TuVung\Competition.jpg" />
+    <Content Include="images\TuVung\Conflict.png" />
+    <Content Include="images\TuVung\Conversation.jpg" />
+    <Content Include="images\TuVung\Couple.jpg" />
+    <Content Include="images\TuVung\Cousin.jpg" />
+    <Content Include="images\TuVung\Cow.jpg" />
+    <Content Include="images\TuVung\Customer.png" />
+    <Content Include="images\TuVung\Cute.jpg" />
+    <Content Include="images\TuVung\Dark.jpg" />
+    <Content Include="images\TuVung\Date.jpg" />
+    <Content Include="images\TuVung\Daughter.jpg" />
+    <Content Include="images\TuVung\Delicious.jpg" />
+    <Content Include="images\TuVung\Dentist.jpg" />
+    <Content Include="images\TuVung\Designer.jpg" />
+    <Content Include="images\TuVung\Dialogue.jpg" />
+    <Content Include="images\TuVung\Dictionary.jpg" />
+    <Content Include="images\TuVung\Divorce.jpg" />
+    <Content Include="images\TuVung\Dog.jpg" />
+    <Content Include="images\TuVung\Donkey.jpg" />
+    <Content Include="images\TuVung\Drink.jpg" />
+    <Content Include="images\TuVung\Elephant.jpg" />
+    <Content Include="images\TuVung\Engineer.jpg" />
+    <Content Include="images\TuVung\Ex-wife.jpg" />
+    <Content Include="images\TuVung\Farmer.jpg" />
+    <Content Include="images\TuVung\Fat.jpg" />
+    <Content Include="images\TuVung\father.jpg" />
+    <Content Include="images\TuVung\Feature.jpg" />
+    <Content Include="images\TuVung\Fish.jpg" />
+    <Content Include="images\TuVung\Fit.jpg" />
+    <Content Include="images\TuVung\Fluent.png" />
+    <Content Include="images\TuVung\Football.jpg" />
+    <Content Include="images\TuVung\Game.jpg" />
+    <Content Include="images\TuVung\Goat.jpg" />
+    <Content Include="images\TuVung\Good-looking.jpg" />
+    <Content Include="images\TuVung\Grammar.jpg" />
+    <Content Include="images\TuVung\Grandparents.jpg" />
+    <Content Include="images\TuVung\Green.jpg" />
+    <Content Include="images\TuVung\Grey.png" />
+    <Content Include="images\TuVung\Handsome.jpg" />
+    <Content Include="images\TuVung\Intermediate.jpg" />
+    <Content Include="images\TuVung\Jogging.jpg" />
+    <Content Include="images\TuVung\Light.png" />
+    <Content Include="images\TuVung\Orange.jpg" />
+    <Content Include="images\VC_entertainment.jpg" />
+    <Content Include="images\VC_family.jpg" />
+    <Content Include="images\VC_job.jpg" />
+    <Content Include="images\VC_sport.jpg" />
+    <Content Include="images\word1.png" />
+    <Content Include="images\word2.png" />
+    <Content Include="MP3\1.mp3" />
+    <Content Include="MP3\2.mp3" />
+    <Content Include="MP3\3.mp3" />
+    <Content Include="MP3\4.mp3" />
+    <Content Include="MP3\5.mp3" />
+    <Content Include="MP3\6.mp3" />
+    <Content Include="MP3\7.mp3" />
+    <Content Include="MP3\8.mp3" />
+    <Content Include="MP3\9.mp3" />
+    <Content Include="MP3\10.mp3" />
+    <Content Include="MP3\11.mp3" />
+    <Content Include="MP3\12.mp3" />
+    <Content Include="Scripts\aos.js" />
+    <Content Include="Scripts\chondapan.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\owl.carousel.min.js" />
+    <Content Include="Views\trangchu\trangchu.cshtml" />
+    <Content Include="Web.config" />
+    <Content Include="Scripts\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MemberController.cs" />
+    <Compile Include="Areas\Admin\Controllers\quantrivienController.cs" />
+    <Compile Include="Controllers\BTLuyenNgheController.cs" />
+    <Compile Include="Controllers\BTNguPhapController.cs" />
+    <Compile Include="Controllers\BTTuVungController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\trangchuController.cs" />
+    <Compile Include="DatVeAPIController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountLogin.cs" />
+    <Compile Include="Models\code\Sessionhelper.cs" />
+    <Compile Include="Models\code\UsernameSession.cs" />
+    <Compile Include="Models\EF\Account.cs" />
+    <Compile Include="Models\EF\DATABASE.cs" />
+    <Compile Include="Models\EF\ProfileTA.cs" />
+    <Compile Include="Models\EF\Question.cs" />
+    <Compile Include="Models\EF\Role.cs" />
+    <Compile Include="Models\EF\sysdiagram.cs" />
+    <Compile Include="Models\EF\TypeTA.cs" />
+    <Compile Include="Models\EF\Unit.cs" />
+    <Compile Include="Models\QuesstionModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap.css.map" />
+    <Content Include="bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="bootstrap\js\bootstrap.js.map" />
+    <Content Include="bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Areas\Admin\Views\LoginAdmin\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\chitietMb.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\Member.cshtml" />
+    <Content Include="Areas\Admin\Views\quantrivien\chitietad.cshtml" />
+    <Content Include="Areas\Admin\Views\quantrivien\quantrivien.cshtml" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <None Include="Dockerfile" />
+    <None Include=".dockerignore">
+      <DependentUpon>Dockerfile</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <Content Include="Views\shared\_LayoutTrangchu.cshtml" />
+    <Content Include="Views\shared\.cshtml" />
+    <Content Include="Views\shared\_LayoutTuVung.cshtml" />
+    <Content Include="Views\trangchu\TuVung.cshtml" />
+    <Content Include="Views\trangchu\Nguphapcoban.cshtml" />
+    <Content Include="Views\trangchu\LuyenNghe.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Home\Trangchu.cshtml" />
+    <Content Include="Views\shared\_Layouthome.cshtml" />
+    <Content Include="Views\shared\_Layoutgeneral.cshtml" />
+    <Content Include="Views\Home\TuVung.cshtml" />
+    <Content Include="Views\Home\NguPhap.cshtml" />
+    <Content Include="Views\Home\LuyenNghe.cshtml" />
+    <Content Include="Views\Home\BTLuyenNghe.cshtml" />
+    <Content Include="Views\Home\BTNguPhap.cshtml" />
+    <Content Include="Views\BTTuVung\BTTuVung.cshtml" />
+    <Content Include="Views\BTTuVung\BTTuVung1.cshtml" />
+    <Content Include="Views\BTTuVung\BTTuVung2.cshtml" />
+    <Content Include="Views\BTTuVung\BTTuVung3.cshtml" />
+    <Content Include="Views\BTNguPhap\BTNguPhap.cshtml" />
+    <Content Include="Views\BTNguPhap\BTNguPhap1.cshtml" />
+    <Content Include="Views\BTNguPhap\BTNguPhap2.cshtml" />
+    <Content Include="Views\BTNguPhap\BTNguPhap3.cshtml" />
+    <Content Include="Views\BTNguPhap\BTNguPhap4.cshtml" />
+    <Content Include="Views\BTLuyenNghe\BTLuyenNghe.cshtml" />
+    <Content Include="Views\BTTuVung\BTTuVung4.cshtml" />
+    <Content Include="Views\BTLuyenNghe\BTLuyenNghe1.cshtml" />
+    <Content Include="Views\BTLuyenNghe\BTLuyenNghe2.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Views\TuVung\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54434</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44352/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.9\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.9\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.9\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.9\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.9\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.9\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

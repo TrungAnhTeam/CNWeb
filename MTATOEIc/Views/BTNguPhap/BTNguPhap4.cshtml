@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewBag.Title = "BTNguPhap";
+    Layout = "~/Views/shared/_Layoutgeneral.cshtml";
+    var sa = ViewBag.qs;
+    var model = ViewBag.Unit;
+}
+<div class="container justify-content-center">
+    <div class="row">
+        <div class="col-4">
+            <ol>
+                @foreach (MTATOEIc.Models.EF.Unit item in model)
+                {
+
+                    if (@item.TypeTA_ID_FK == 2)
+                    {
+
+                        <li>
+                            @{
+
+                                var title = @item.Unit_Name + " . " + @item.Unit_Content;
+
+                            }
+                            <a href="@Url.Action(item.link)" class="btn btn-outline-info">@title</a>
+
+                        </li>
+                    }
+                }
+            </ol>
+        </div>
+        <div class="col-8">
+            <ol>
+                @foreach (var item in sa)
+                {
+
+                    if (@item.Unit_ID_FK == 14)
+                    {
+                        <li>
+
+                            <p>@item.Ques_Content<p>
+                                <button type="button" class="btn btn-outline-primary withbut" id="x1">A.@item.Answer_1</button>
+                                <button type="button" class="btn btn-outline-primary withbut" id="x2">B.@item.Answer_2</button>
+                                <button type="button" class="btn btn-outline-primary withbut" id="x3">C.@item.Answer_3</button>
+                                <button type="button" class="btn btn-outline-primary withbut" id="x4">C.@item.Answer_4</button>
+                                <div id="conten">
+                                    @item.Sugget_conten;
+                                </div>
+                            <p id="anser">@item.Answer</p>
+
+
+                        </li>
+
+                    }
+                }
+            </ol>
+        </div>
+    </div>
+
+</div>
+<script>
+    var ans = document.getElementById('anser').innerHTML;
+    var km = true;
+    document.getElementById('x1').onclick = function () {
+        if (km) {
+            document.getElementById("conten").style.display = "block";
+            km = false;
+            if (ans == "1") {
+                document.getElementById("x1").className = "btn btn-success";
+            }
+            else {
+                document.getElementById("x1").className = "btn btn-danger";
+                if (ans == "2")
+                    document.getElementById("x2").className = "btn btn-warning";
+                if (ans == "3")
+                    document.getElementById("x3").className = "btn btn-warning";
+                if (ans == "4")
+                    document.getElementById("x4").className = "btn btn-warning";
+            }
+        }
+    };
+    document.getElementById('x2').onclick = function () {
+        if (km) {
+            document.getElementById("conten").style.display = "block";
+            km = false;
+            if (ans == "2") {
+                document.getElementById("x2").className = "btn btn-success";
+            }
+            else {
+                document.getElementById("x2").className = "btn btn-danger";
+                if (ans == "1")
+                    document.getElementById("x1").className = "btn btn-warning";
+                if (ans == "3")
+                    document.getElementById("x3").className = "btn btn-warning";
+                if (ans == "4")
+                    document.getElementById("x4").className = "btn btn-warning";
+            }
+        }
+    };
+    document.getElementById('x3').onclick = function () {
+        if (km) {
+            document.getElementById("conten").style.display = "block";
+            km = false;
+            if (ans == "3") {
+                document.getElementById("x3").className = "btn btn-success";
+            }
+            else {
+                document.getElementById("x3").className = "btn btn-danger";
+                if (ans == "2")
+                    document.getElementById("x2").className = "btn btn-warning";
+                if (ans == "1")
+                    document.getElementById("x1").className = "btn btn-warning";
+                if (ans == "4")
+                    document.getElementById("x4").className = "btn btn-warning";
+            }
+        }
+    };
+    document.getElementById('x4').onclick = function () {
+        if (km) {
+            if (km) {
+                document.getElementById("conten").style.display = "block";
+                km = false;
+                if (ans == "4") {
+                    document.getElementById("x4").className = "btn btn-success";
+                }
+                else {
+                    document.getElementById("x4").className = "btn btn-danger";
+                    if (ans == "2")
+                        document.getElementById("x2").className = "btn btn-warning";
+                    if (ans == "3")
+                        document.getElementById("x3").className = "btn btn-warning";
+                    if (ans == "1")
+                        document.getElementById("x1").className = "btn btn-warning";
+                }
+            }
+        };
+    };
+</script>
+
+

@@ -1,0 +1,22 @@
+﻿@model  MTATOEIc.Models.LevelTA
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/shared/_Layoutgeneral.cshtml";
+    var lv = ViewBag.Levels;
+}
+
+<h2>Index</h2>
+<div>
+
+
+    @foreach (MTATOEIc.Models.LevelTA ta in lv)
+    {
+        <h2>@ta.Level_ID</h2>
+        <h2>@ta.Level_Name</h2>
+        <h2>@ta.Level_Description</h2>
+        <h2>@ta.IsActive</h2>
+    }
+
+
+</div>
+

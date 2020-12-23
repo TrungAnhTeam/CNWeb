@@ -1,0 +1,242 @@
+body{
+	margin: 0;
+	padding: 0;
+    font-size:20px;
+}
+/*xử lý menu*/
+.dropdown{
+  
+	position: relative;
+	display: inline-block;
+}
+.dropdown-content{
+	display: none;
+	position: absolute;
+	z-index: 1;
+	background-color: #f5f5f5;
+}
+.dropdown:hover .dropdown-content{
+	display: block;
+}
+/*list product*/
+.list-product-title{
+	width: 100%;
+	text-transform: uppercase;
+	margin-left: 5px;
+	margin-right: 5px;
+
+}
+.list-product-subtitle{
+	width: 100%;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+/*product card*/
+.card-product{
+	width: 100%;
+	margin-left: 5px;
+	margin-right: 5px;
+	overflow: hidden;	
+}
+
+#LogoEnglish{
+  width: 80px;
+  height: 35px;
+  
+
+}
+.ColorMenu{
+  background-color: black;
+}
+#signin{
+  margin: 10px; 
+}
+
+.khung{
+  width: 40px;
+  height: 40px;
+  background-color: red;
+}
+
+/*-----------------------------------------------------Trung-------------------------------------*/
+main .Vocabulary .container{
+	background: url('./images/word1.png');
+	background-repeat: no-repeat;
+    background-position: right;
+    
+    background-size: 100%;
+}
+main .gramar .container{
+	background: url('./images/word2.png');
+	background-repeat: no-repeat;
+    background-position: right;
+    
+    background-size: 90%;
+}
+main .Vocabulary .MayChuyenDong1{
+	width: 100%;
+	
+}
+
+/*------------------ảnh nền động----------------*/
+
+@keyframes animatedBackground2 {
+	0%{
+		background-position: 0 30%;
+	}
+    50%{
+    	background-position: 100% 30%;
+    }
+  	100%{
+  		background-position: 0 30%;
+  	}
+  
+}
+@keyframes animatedBackground1 {
+	0%{
+		background-position: 0% 0;
+	}
+    100%{
+    	background-position: 100% 0;
+    }
+  	
+}
+
+@keyframes animatedBackground3 {
+	0%{
+		background-position: 15% 30%;
+	}
+    50%{
+    	background-position: 80% 30%;
+    }
+  	100%{
+  		background-position: 30% 30%;
+  	}
+}
+
+.lentop {display:none; bottom: 40%; right: 10px; cursor: pointer;  position: fixed; z-index: 1000;}
+.lentop div {background:crimson; border:2px solid #fff; border-radius:45px; padding:11px 12.5px; box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.3)}
+.lentop img {width:16px; height:16px;}
+
+.MayChuyenDong1{
+	background-image: url(./images/cloud_douple.png);
+
+  background-position: 20% 0px;
+  background-repeat: repeat-x;
+  background-size: 70%;
+  
+
+  animation: animatedBackground1 20s linear infinite;
+
+
+}
+
+#MayChuyenDong2 { 
+
+  background-image: url(./images/cloud.png);
+  background-position: 0px 0px;
+
+  background-repeat: no-repeat;
+  background-size: 20%;
+
+ 
+  animation: animatedBackground2 40s linear infinite;
+  
+  
+}
+#MayChuyenDong3 { 
+
+  background-image: url(./images/cloud.png);
+  background-position: 0px 0px;
+
+  background-repeat: no-repeat;
+  background-size: 10%;
+
+ 
+  animation: animatedBackground3 20s linear infinite;
+  
+  
+}
+/*-----------x-------ảnh nền động---------x-------*/
+
+/* ----------------- Footer --------------------- */
+
+footer.footer{
+    height: 100%;
+    background: black;
+    position: relative;
+    padding-bottom:10px;   
+}
+
+footer.footer .container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+footer.footer .container > div{
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 3rem .9rem;
+
+}
+
+footer.footer .container h2{
+    color: white;
+}
+
+footer.footer .newsletter .form-element{
+    background: black;
+    display: inline-block;
+}
+
+footer.footer .newsletter .form-element input{
+    padding: .5rem .7rem;
+    border: none;
+    background: transparent;
+    color: white;
+    font-family: var(--Josefin);
+    font-size: 1rem;
+    width: 74%;
+}
+
+
+
+footer.footer .follow div i{
+    color: white;
+    padding: 0 .4rem;
+}
+
+footer.footer .rights{
+    justify-content: center;
+    font-family: var(--Josefin);
+}
+
+footer.footer .rights h4 a{
+    color: white;
+}
+
+footer.footer .move-up{
+    position: absolute;
+    background-color: white;
+    right: 6%;
+    top: 50%;
+}
+
+footer.footer .move-up span{
+    color: blue;
+}
+
+
+}
+
+footer .khung{
+  width: 40px;
+  height: 40px;
+}
+
+/* ---------x------- Footer ----------x---------- */
+
+
+/*-------------------------x------------------Trung-------------------x--------------------*/

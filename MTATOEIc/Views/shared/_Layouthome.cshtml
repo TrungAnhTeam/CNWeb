@@ -1,0 +1,152 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/Content/Trangchu.css" rel="stylesheet" />
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/aos.css" rel="stylesheet" />
+    <link href="/Content/all.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <!--------------------------- menu ----------------------------->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top  ">
+        <div class="container ">
+            <a class="navbar-brand " href="@Url.Action("trangchu","Home")">
+                <img id="LogoEnglish" src="/images/LogoEngLish.png" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto" id="bttext">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#tuvung" id="navbarDropdown">
+                            Từ vựng
+                        </a>
+                        <div class="dropdown-content">
+                            <a class="dropdown-item" href="@Url.Action("TuVung","Home")">Từ vựng theo chủ đề</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="@Url.Action("BTTuVung","BTTuVung")">Bài tập</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#nguphap" id="navbarDropdown">
+                            Ngữ pháp
+                        </a>
+                        <div class="dropdown-content">
+                            <a class="dropdown-item" href="@Url.Action("NguPhap","Home")">Ngữ pháp cơ bản</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="@Url.Action("BTNguPhap","BTNguPhap")">Bài tập</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#luyennghe" id="navbarDropdown">
+                            Luyện nghe
+                        </a>
+                        <div class="dropdown-content">
+                            <a class="dropdown-item" href="L" @Url.Action("LuyenNghe","Home") "">Luyện phát âm</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="@Url.Action("BTLuyenNghe","BTLuyenNghe")">Bài tập luyện nghe</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdown">
+                            Liên hệ
+                        </a>
+                </ul>
+                <div class="form-inline my-2 my-lg-0">
+                    <p></p>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!---------------x-------- end menu --------------x------------------------->
+    <!------------------------------- slide ------------------------------------>
+    <div id="carouselExampleIndicators" class="carousel slide mt-1" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="/images/TrangChu1.png" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="/images/TrangChu2.png" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="/images/TrangChu3.png" alt="Third slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!---------------------x---------------- end slide ----------x---------------------->
+    <main>
+        @RenderBody()
+    </main>
+    <!-- --------------------------- Footer ---------------------------------------- -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="about-us" data-aos="fade-right" data-aos-delay="200">
+                <h2>Thông tin</h2>
+                <p>Trang web được xây dựng để học Tiếng Anh </p>
+                <p>Học viện kỹ thuật quân sự</p>
+            </div>
+
+            <div class="about-us" data-aos="fade-right" data-aos-delay="200">
+                <h2>Thành viên nhóm</h2>
+                <p>Trịnh Thành Trung </p>
+                <p>Trần Sang Anh</p>
+                <p>Lê Học Đại</p>
+                <p>Roat Bunthoeun</p>
+            </div>
+
+            <div class="follow" data-aos="fade-left" data-aos-delay="200">
+                <h2>Liên hệ chúng tôi</h2>
+                <p>Tòa nhà S11, Học viện kỹ thuật quân sự</p>
+
+            </div>
+
+        </div>
+        <div class="rights flex-row">
+            <h6 class="text-white text-center">
+                Sáng lập ©2020 công nghệ phần mềm | made by FcQuaTuyetVoi
+            </h6>s
+        </div>
+
+
+    </footer>
+
+    <div class='lentop'>
+        <div>
+            <img src='https://1.bp.blogspot.com/-k6sikOdzFXQ/VwqCKDosmEI/AAAAAAAAKxE/nLxLhkTIO6o3iE5ZWmtxo2bf4QHdzPQNQ/s1600/top.png' />
+        </div>
+    </div>
+    <!-- -------------x------------- Footer --------------------x------------------- -->
+    <!-- Load jquery trước khi load bootstrap js -->
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- ------------ AOS js Library  ------------------------- -->
+    <script src="~/Scripts/aos.js"></script>
+    <script src="~/Scripts/owl.carousel.min.js"></script>
+    <script src="~/Scripts/main.js"></script>
+</body>
+
+</html>

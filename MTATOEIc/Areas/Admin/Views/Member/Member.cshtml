@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "Member";
+   
+    var mb = ViewBag.member as List<MTATOEIc.Models.EF.Account>;
+   
+}
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="~/Content/Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="~/bootstrap/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <input type="checkbox" id="check">
+    <!--header area start-->
+    <header class="maunen">
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <div class="left_area ">
+            <h3>MTA <span>TOEIC</span></h3>
+        </div>
+        <div class="right_area ">
+            <a href="LoginAdmin.html" class="logout_btn">Đăng xuất</a>
+        </div>
+    </header>
+    <!--header area end-->
+    <!--mobile navigation bar start-->
+    <div class="mobile_nav">
+        <div class="nav_bar">
+            <img src="1.png" class="mobile_profile_image" alt="">
+            <i class="fa fa-bars nav_btn"></i>
+        </div>
+        <div class="mobile_nav_items">
+            <a href="/Admin/Member/Member"><i class="fas fa-desktop"></i><span>Thành viên</span></a>
+            <a href="/Admin/quantrivien/quantrivien"><i class="fas fa-cogs"></i><span>Quản trị viên</span></a>
+
+        </div>
+    </div>
+    <!--mobile navigation bar end-->
+    <!--sidebar start-->
+    <div class="sidebar">
+        <div class="profile_info">
+            <img src="~/images/Admin/Logonhom.png" class="profile_image" alt="">
+            <h4>Nhóm MTA</h4>
+        </div>
+        <a href="/Admin/Member/Member"><i class="fas fa-desktop"></i><span>Thành viên</span></a>
+        <a href="/Admin/quantrivien/quantrivien"><i class="fas fa-cogs"></i><span>Quản trị viên</span></a>
+    </div>
+    <!--sidebar end-->
+
+    <div class="content">
+        <h2>Danh sách thành viên tham gia khóa học</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Full Name</th>
+                    <th>Phone</th>
+                    <th>Role</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in mb)
+                {
+                    if (@item.Role.Role_ID == 2)
+                    {
+                        <tr>
+                            <td>@item.Username</td>
+                            <td>@item.ProfileTA.Pro_FullName</td>
+                            <td>@item.ProfileTA.Pro_Phone</td>
+                            <td>Member</td>
+                            <td>
+                                <a href="/Admin/quantrivien/chitietad?username=@item.Username">
+                                    <img src="~/images/Admin/information.png" width="20" height="20" />
+                                </a>
+                            </td>
+
+
+                        </tr>
+                    }
+
+
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('.nav_btn').click(function(){
+        $('.mobile_nav_items').toggleClass('active');
+      });
+    });
+    </script>
+
+</body>
+</html>
+
+
